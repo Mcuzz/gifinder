@@ -1,14 +1,156 @@
- *{
-box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #181818;
+  background: #f4f4f4;
+}
+
 body {
-margin: 0;
-min-width: 320px;
-min-height: 100vh;
-font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
-main {
-width: min(90%, 1200px);
-margin: 0 auto;
-padding: 2rem 0;
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  margin: 0.25rem 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.hero p {
+  margin-top: 0.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.search-form {
+  padding: 1rem;
+  border: 1px solid #bdbdbd;
+  background: #ffffff;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid #999;
+}
+
+.search-row button {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #181818;
+  background: #181818;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.search-row button:hover {
+  opacity: 0.85;
+}
+
+.status {
+  min-height: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gif-card {
+  overflow: hidden;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.gif-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gif-card__content {
+  padding: 1rem;
+}
+
+.gif-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.author {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.rating {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.tags {
+  margin: 0;
+  color: #555;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+}
+
+@media (max-width: 540px) {
+  .search-row {
+    flex-direction: column;
+  }
+
+  .search-row button {
+    width: 100%;
+  }
 }
